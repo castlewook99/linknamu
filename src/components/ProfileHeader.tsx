@@ -4,18 +4,20 @@ import type { Profile } from "@/data/profile";
 export default function ProfileHeader({ profile }: { profile: Profile }) {
   return (
     <header className="flex flex-col items-center text-center">
-      <Image
-        src={profile.imageUrl}
-        alt={`${profile.name} 프로필 사진`}
-        width={176}
-        height={176}
-        priority
-        className="h-36 w-36 rounded-full border-2 border-zinc-200 object-cover sm:h-44 sm:w-44 dark:border-zinc-700"
-      />
-      <h1 className="mt-5 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+      <div className="rounded-full bg-white/60 p-1.5 shadow-[0_18px_40px_-14px_rgb(var(--shadow-warm)/0.45),0_2px_6px_rgb(var(--shadow-warm)/0.12)] ring-1 ring-white/80">
+        <Image
+          src={profile.imageUrl}
+          alt={`${profile.name} 프로필 사진`}
+          width={128}
+          height={128}
+          priority
+          className="h-28 w-28 rounded-full object-cover sm:h-32 sm:w-32"
+        />
+      </div>
+      <h1 className="mt-6 text-[1.625rem] leading-tight font-bold tracking-tight text-ink">
         {profile.name}
       </h1>
-      <p className="mt-2 text-base text-zinc-600 dark:text-zinc-400">
+      <p className="mt-2.5 max-w-xs text-[0.9375rem] leading-relaxed text-ink-soft">
         {profile.bio}
       </p>
     </header>
